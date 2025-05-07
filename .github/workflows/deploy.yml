@@ -33,6 +33,10 @@ jobs:
         env:
           CI: true
 
+      - name: Check build output
+        run: ls -la dist
+        working-directory: ./frontend
+
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:
@@ -43,6 +47,9 @@ jobs:
           enable-pull-request-comment: true
           enable-commit-comment: true
           overwrites-pull-request-comment: true
+          alias: ${{ github.sha }}
+          # Forcera ombyggnad av cache
+          production-deploy: true
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
