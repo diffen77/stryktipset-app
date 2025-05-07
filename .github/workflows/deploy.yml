@@ -28,7 +28,7 @@ jobs:
       - name: Deploy to Netlify
         uses: nwtgck/actions-netlify@v2
         with:
-          publish-dir: './build' # Anpassa till din byggkatalog
+          publish-dir: './frontend/dist' # Ändrad från './build' till korrekt byggkatalog
           production-branch: main # Eller den branch du vill deploya från
           deploy-message: "Deploy from GitHub Actions"
         env:

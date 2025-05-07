@@ -108,3 +108,6 @@ Once the backend server is running, you can access the API documentation at:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Deployment Status
+Currently deploying to Netlify via GitHub Actions workflow.
